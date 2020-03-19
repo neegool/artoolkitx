@@ -38,14 +38,14 @@ dependencies {
 
 task jarReleaseUnity(type: Jar) {
     dependsOn build
-    from fileTree(dir: 'build/intermediates/classes/release', excludes: ['**/rendering/*', '**/R$*', '**/assets/*', '**/ARActivity*', '**/R.class', '**/support/*'])
+    from fileTree(dir: 'build/intermediates/javac/release', excludes: ['**/rendering/*', '**/R$*', '**/assets/*', '**/ARActivity*', '**/R.class', '**/support/*'])
     group 'build'
     archiveName 'arxjUnity.jar'
 }
 
 task jarDebugUnity(type: Jar) {
     dependsOn build
-    from fileTree(dir: 'build/intermediates/classes/debug', excludes: ['**/rendering/*', '**/R$*', '**/assets/*', '**/ARActivity*', '**/R.class', '**/support/*'])
+    from fileTree(dir: 'build/intermediates/javac/debug', excludes: ['**/rendering/*', '**/R$*', '**/assets/*', '**/ARActivity*', '**/R.class', '**/support/*'])
     group 'build'
     archiveName 'arxjUnityDebug.jar'
 }
