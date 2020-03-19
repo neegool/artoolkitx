@@ -225,10 +225,10 @@ bool ARVideoSource::open2()
             return (open3(&cparam));
         } else {
             // Search database.
-            if (ar2VideoGetCParamAsync(m_vid, open2CparamCallback, (void *)this) == 0) {
-                ARLOGi("Fetching external camera parameters.\n");
-                return true;
-            }
+            // if (ar2VideoGetCParamAsync(m_vid, open2CparamCallback, (void *)this) == 0) {
+            //     ARLOGi("Fetching external camera parameters.\n");
+            //     return true;
+            // }
         }
         return open3(NULL);
     }
