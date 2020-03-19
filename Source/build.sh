@@ -74,7 +74,7 @@ then
     # Identify Linux OS. Sets useful variables: ID, ID_LIKE, VERSION, NAME, PRETTY_NAME.
     source /etc/os-release
     # Windows Subsystem for Linux identifies itself as 'Linux'. Additional test required.
-    if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    if [ $BUILD_WINDOWS ] && grep -qE "(Microsoft|WSL|oe-user@oe-host)" /proc/version &> /dev/null ; then
         OS='Windows'
     fi
 elif [ "$OS" = "Darwin" ]
